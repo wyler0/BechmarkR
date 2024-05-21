@@ -16,8 +16,8 @@ class GenerateExecutionModel(models.Model):
 class GeneratedQuestionsModel(models.Model):
     id = models.AutoField(primary_key=True)
     generate_execution_instance = models.ForeignKey(GenerateExecutionModel, on_delete=models.CASCADE)
-    question_text = models.TextField()
+    question_text = models.TextField(null=True)
+    question_text_context = models.TextField(null=True)
     answer_text = models.JSONField(default=dict)
-    correct_answer = models.JSONField(default=dict)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
