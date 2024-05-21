@@ -35,6 +35,11 @@ python manage.py makemigrations; python manage.py migrate;
 ```
 python manage.py createsuperuser
 ```
+(6) Add OpenAI Keys
+```
+touch .env.keys
+```
+Then write your open ai key as "OPENAI_API_KEY=..."
 (6) Run Django Server
 ```
 python manage.py runserver;
