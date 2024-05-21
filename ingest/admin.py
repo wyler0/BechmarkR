@@ -1,3 +1,6 @@
 from django.contrib import admin
+from ingest.models import FileModel
 
-# Register your models here.
+@admin.register(FileModel)
+class FileModelAdmin(admin.ModelAdmin):
+    list_display = ('id', 'file_name', 'created_date')  # fields to display in the admin panel

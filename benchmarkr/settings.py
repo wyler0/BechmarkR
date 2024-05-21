@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     
     # Added app for ingest
     'ingest',
+    'generate',
+    'benchmark',
 ]
 
 MIDDLEWARE = [
