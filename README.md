@@ -5,9 +5,11 @@
 
 URLs:
 /admin
-/ingest/ingest_pdf
-/generate/generate_frq
+/ingest/ingest_pdf --> Upload a PDF to use for benchmark question generation 
+/generate/generate_submission --> Execute a generation. MCQ is not implemented, only FRQ.
 
+I hoped to use hugging face evaluate and datasets libraries to execute evaluation, but time required to setup on-prem Ollama model for this did not fit requirements unfortunately.
+/benchmark/...
 
 
 ## Setup
@@ -35,12 +37,11 @@ python manage.py makemigrations; python manage.py migrate;
 ```
 python manage.py createsuperuser
 ```
-(6) Add OpenAI Keys
-```
-touch .env.keys
-```
-Then write your open ai key as "OPENAI_API_KEY=..."
+(6) Add OpenAI Key to .env.django file
+Write your open ai key on the line "OPENAI_API_KEY=..."
+
 (6) Run Django Server
 ```
-python manage.py runserver;
+python manage.py runserver
 ```
+
